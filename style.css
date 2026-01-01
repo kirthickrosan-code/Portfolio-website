@@ -1,0 +1,688 @@
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: radial-gradient(circle at center, #0b1c4d, #030b2c);
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    backdrop-filter: blur(30px);
+
+    transform: scale(0);
+    animation: zoom-in 1s ease forwards;
+}
+
+
+@keyframes zoom-in {
+    100% {
+        transform: scale(1);
+    }
+    
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.animated {
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slide-in 1s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes slide-in {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo{
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a{
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    border-bottom: 2px solid transparent;
+    transition: 0.5s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    border-color: #fff;
+}
+
+.home {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 50px;
+    padding: 120px 5% 0;
+    color: #fff;
+
+    animation-delay: 1.5s;
+}
+
+
+.home-detail h1 {
+   font-size: 55px;
+   line-height: 1;
+}
+
+.home-detail h2 {
+   font-size: 32px;
+
+}
+
+.home-detail p {
+    margin: 10px 0 20px;
+}
+
+.home-detail .download-social {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #fff;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn:hover {
+    background: transparent;
+    box-shadow: none;
+    color: #fff;
+}
+
+.home-detail .social-icons {
+    margin-left: 20px;
+}
+
+.home-detail .social-icons a {
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: .5s;
+}
+
+.home-detail .social-icons a:hover {
+    background: #fff;
+    box-shadow: 0 0 10px #fff;
+    color: #333;
+}
+
+.home-img .img-box {
+    position: relative;
+    width: 28vw;
+    height: 28vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+}
+
+.home-img .img-box img {
+    position: absolute;
+    top: -30px;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* About Section */
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* About Section */
+.about {
+    min-height: 100vh;
+    width: 100vw;
+
+    padding: 120px 10%;
+    background: url("background.jpg") center/cover no-repeat;
+
+    box-sizing: border-box;
+}
+
+
+
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-info {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.info-box {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.info-box h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   SKILLS SECTION (FULL)
+================================ */
+
+.skills {
+    min-height: 100vh;
+    width: 100%;
+    padding: 120px 10%;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    position: relative;
+}
+
+/* DARK OVERLAY */
+.skills::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 0;
+}
+
+.skills > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+
+.skills-content {
+    width: 100%;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* LEFT TITLE */
+.skills-title {
+    flex: 1;
+}
+
+.skills-title h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+/* RIGHT SIDE */
+.skills-right {
+    flex: 2;
+}
+
+/* ===============================
+   BOXES
+================================ */
+
+.skills-box-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* INDIVIDUAL BOX */
+.skills-box {
+    background: rgba(255, 255, 255, 0.12); /* TEMP bright background */
+    padding: 30px 35px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+
+/* BOX TITLE */
+.skills-box h3 {
+    font-size: 24px;
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+/* LIST */
+.skills-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-box ul li {
+    font-size: 17px;
+    margin-bottom: 10px;
+    padding-left: 18px;
+    position: relative;
+}
+
+/* BULLET */
+.skills-box ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #38bdf8;
+    font-size: 18px;
+}
+
+/* ===============================
+   PROJECTS SECTION
+================================ */
+
+.projects {
+    min-height: 100vh;
+    width: 100%;
+    padding: 120px 10%;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    position: relative;
+}
+
+/* DARK OVERLAY */
+.projects::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 0;
+}
+
+.projects > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+
+.projects-content {
+    width: 100%;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* LEFT TITLE */
+.projects-title {
+    flex: 1;
+}
+
+.projects-title h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+/* RIGHT CARDS */
+.projects-cards {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ===============================
+   PROJECT CARD
+================================ */
+
+.project-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* PROJECT TITLE */
+.project-card h3 {
+    font-size: 24px;
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+/* DESCRIPTION */
+.project-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* TECH TAG */
+.project-card .tech {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid #38bdf8;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #38bdf8;
+}
+
+/* ===============================
+   CERTIFICATIONS SECTION
+================================ */
+
+.certifications {
+    min-height: 100vh;
+    width: 100%;
+    padding: 120px 10%;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    position: relative;
+}
+
+/* DARK OVERLAY */
+.certifications::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 0;
+}
+
+.certifications > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+
+.certifications-content {
+    width: 100%;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* LEFT TITLE */
+.certifications-title {
+    flex: 1;
+}
+
+.certifications-title h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+/* RIGHT CARDS */
+.certifications-cards {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* ===============================
+   CERTIFICATION CARD
+================================ */
+
+.cert-card {
+    background: #1e293b;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* PROVIDER NAME */
+.cert-card h3 {
+    font-size: 22px;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+/* CERT DESCRIPTION */
+.cert-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+/* TAG */
+.cert-card .cert-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid #38bdf8;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #38bdf8;
+}
+
+/* ===============================
+   CONTACT SECTION
+================================ */
+
+.contact {
+    min-height: 100vh;
+    width: 100%;
+    padding: 120px 10%;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    position: relative;
+}
+
+/* DARK OVERLAY */
+.contact::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 0;
+}
+
+.contact > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+
+.contact-content {
+    width: 100%;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* LEFT TITLE */
+.contact-title {
+    flex: 1;
+}
+
+.contact-title h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+/* RIGHT SIDE */
+.contact-right {
+    flex: 2;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* ===============================
+   CONTACT INFO BOX
+================================ */
+
+.contact-info {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 18px;
+    min-width: 280px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item h3 {
+    font-size: 20px;
+    color: #38bdf8;
+    margin-bottom: 6px;
+}
+
+.info-item p {
+    font-size: 16px;
+}
+
+/* ===============================
+   CONTACT FORM
+================================ */
+
+.contact-form {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 18px;
+    min-width: 300px;
+    flex: 1;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.contact-form button:hover {
+    background: #0ea5e9;
+}
